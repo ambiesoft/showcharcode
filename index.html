@@ -10,8 +10,12 @@
 </head>
 
 <body>
+    <h1>Shows JS charCodeAt() values</h1>
+    <p>Enter any strings</p>
     <div id="app">
         <input v-model="message" />
+        <input name="isHex" type="checkbox" v-model="isHex">
+        <label for="isHex">Hex</label>
         <p v-if="isTooLong">Text is too long.</p>
         <p>{{ codedString }}</p>
     </div>

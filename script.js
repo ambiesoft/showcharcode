@@ -5,6 +5,7 @@ const App = {
         return {
             message: '',
             isTooLong: false,
+            isHex: true,
         }
     },
     computed: {
@@ -16,7 +17,10 @@ const App = {
         getCodedString(str) {
             let ret = ''
             for (let i = 0; i < str.length; i++) {
-                ret += (str[i] + '(0x' + str.charCodeAt(i).toString(16) + ')')
+                if(this.isHex)
+                    ret += (str[i] + '(0x' + str.charCodeAt(i).toString(16) + ')');
+                else
+                    ret += (str[i] + '(' + str.charCodeAt(i) + ')');
             }
             return ret;
         }
