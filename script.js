@@ -3,14 +3,14 @@ const MAXLENGTH = 256;
 const App = {
     data() {
         return {
-            message: '',
+            userString: '',
             isTooLong: false,
             isHex: true,
         }
     },
     computed: {
         codedString() {
-            return this.getCodedString(this.message);
+            return this.getCodedString(this.userString);
         }
     },
     methods: {
